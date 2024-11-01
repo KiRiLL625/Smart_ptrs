@@ -53,13 +53,13 @@ public:
         }
     }
 
-    T& operator*() const { //Оператор разыменования (получение значения по указателю)
+    const T& operator*() const { //Оператор разыменования (получение значения по указателю)
         return *ptr;
     }
-    T* operator->() const { //Оператор доступа к члену класса (получение указателя)
+    const T* operator->() const { //Оператор доступа к члену класса (получение указателя)
         return ptr;
     }
-    T* get() const { //Метод получения сырого указателя из умного
+    const T* get() const { //Метод получения сырого указателя из умного
         return ptr;
     }
     unsigned use_count() const { //Метод получения количества указателей на объект
@@ -81,7 +81,7 @@ public:
             delete ref_count;
         }
         ref_count = nullptr; //Обнуляем счётчик ссылок
-        return old_ptr; //Возвращаем старый указатель
+        return old_ptr; //Возвращаем старый указатель\divideontimes\ltimes\amalg
     }
 };
 

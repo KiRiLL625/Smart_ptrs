@@ -4,8 +4,10 @@ set(CMAKE_CXX_STANDARD 17)
 
 enable_testing()
 
-add_executable(${PROJECT_NAME} test.cpp test.h ../Unique_ptr.h ../Shared_ptr.h ../MemorySpan.h) # просто тесты
-add_executable(leak_${PROJECT_NAME} test.cpp test.h ../Unique_ptr.h ../Shared_ptr.h ../MemorySpan.h) # тесты с утечкой памяти
+add_executable(${PROJECT_NAME} test.cpp test.h ../Unique_ptr.h ../Shared_ptr.h ../MemorySpan.h
+        ../MsPtr.h) # просто тесты
+add_executable(leak_${PROJECT_NAME} test.cpp test.h ../Unique_ptr.h ../Shared_ptr.h ../MemorySpan.h
+        ../MsPtr.h) # тесты с утечкой памяти
 
 target_link_libraries(${PROJECT_NAME} gtest gtest_main)
 target_link_libraries(leak_${PROJECT_NAME} gtest gtest_main)
